@@ -1,6 +1,6 @@
-import React from 'react';
+    import React from 'react';
 import { useForm } from 'react-hook-form';
-import { createEmployee } from '../services/EmployeeService';
+import { createEmployee, } from '../services/EmployeeService';
 import { useNavigate } from 'react-router-dom';
 
 const Employee = () => {
@@ -16,6 +16,7 @@ const Employee = () => {
             console.error(error);
         }
     };
+
 
     return (
         <div className="container">
@@ -57,7 +58,7 @@ const Employee = () => {
                                     className={`form-control ${errors.email ? 'is-invalid' : ''}`}
                                     {...register('email', {
                                         required: 'Email is required',
-                                        pattern: { value: /^\S+@\S+$/i, message: 'Invalid email address' }
+                                        pattern: { value: /^\S+@\S+$/i, message: 'Invalid email address' }// מסמל שיש string ובאמצע שלו @ על מנת לבדוק שזה אימייל
                                     })}
                                 />
                                 {errors.email && (
